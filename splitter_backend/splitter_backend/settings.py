@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'splitter.apps.SplitterConfig',
+    'splitter_api.apps.SplitterConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

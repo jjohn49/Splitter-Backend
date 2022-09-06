@@ -1,11 +1,7 @@
-from pymongo import MongoClient
-import certifi
+from database import DataBase
 
-cluster = MongoClient("mongodb+srv://jjohns49:Green2002@cluster0.7d65ffv.mongodb.net/?retryWrites=true&w=majority", tlsCAFile = certifi.where())
-db = cluster["SplitterDB"]
-collection = db["Users"]
+db = DataBase()
+ret = db.postUserData("jjohns49@villanova.edu", "Jack", "Johnston", "JJ", "Green2002", ["mmoran", "mcarroll"])
 
-collection.insert_one({"id":0,"name":"Jack"})
-
-print("finished")
+print(ret)
 

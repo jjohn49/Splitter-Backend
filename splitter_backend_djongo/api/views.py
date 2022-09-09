@@ -18,3 +18,6 @@ def get_UserData(request, username):
         return JsonResponse(json.dumps(val[0], default=str), safe=False)
     else:
         return JsonResponse({"Error": "No User found for " + username })
+
+def headerTest(request):
+    return JsonResponse(request.headers)

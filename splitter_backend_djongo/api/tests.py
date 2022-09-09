@@ -6,8 +6,6 @@ db = DataBase()
 
 data = db.findUserByField("username","JJ")
 
-print(type(data[0]))
+datab = db.cluster
 
-for x in data:
-    print(x)
 

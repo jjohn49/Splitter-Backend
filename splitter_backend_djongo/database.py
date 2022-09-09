@@ -15,6 +15,21 @@ class DataBase:
 
         return collection
 
+    def getAllUserData(self):
+
+        collection = self.getDatabaseCollection("Users")
+
+        return collection.find()
+
+
+    def findUserByField(self, field, value):
+        collection = self.getDatabaseCollection("Users")
+
+        if not collection.find({field:value}) == None:
+            return collection.find({field:value})
+        else:
+            return {"Error" : "User not for " + field + " : " + value}
+
     def postUserData(self, email, fname, lname, username, password, friends_list):
         userCollections = self.getDatabaseCollection("Users")
 
